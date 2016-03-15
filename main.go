@@ -13,7 +13,9 @@ import (
 import "gopkg.in/alecthomas/kingpin.v2"
 
 var (
-	app        = kingpin.New("jsontologfmt", "Reads log15 (https://gopkg.in/inconshreveable/log15.v2) compatible JSON logs from stdin and pretty prints them to stdout")
+	app = kingpin.New("jsontologfmt", "Reads log15 (https://gopkg.in/inconshreveable/log15.v2) compatible JSON logs from stdin and pretty prints them to stdout. "+
+		"The names of different keys (like where to find the timestamp and log level) are configurable, but the logging level must be a number from 0 to 4, with 0 being CRIT and 4 "+
+		" being DEBUG")
 	logger     = log15.New("main", "jsontologfmt")
 	keyNames   log15.RecordKeyNames
 	timeLayout string
