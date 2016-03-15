@@ -13,7 +13,7 @@ import (
 import "gopkg.in/alecthomas/kingpin.v2"
 
 var (
-	app        = kingpin.New("jsontologfmt", "Displays log15 (https://gopkg.in/inconshreveable/log15.v2) compatible JSON logs using the log15 terminal formatter")
+	app        = kingpin.New("jsontologfmt", "Reads log15 (https://gopkg.in/inconshreveable/log15.v2) compatible JSON logs from stdin and pretty prints them to stdout")
 	logger     = log15.New("main", "jsontologfmt")
 	keyNames   log15.RecordKeyNames
 	timeLayout string
